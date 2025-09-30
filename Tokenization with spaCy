@@ -1,0 +1,5 @@
+# Create a Doc container of the given text
+document = nlp(text)    
+# Store and review the token text values of tokens for the Doc container
+first_text_tokens = [token.text for token in document]
+print("First text tokens:\n", first_text_tokens, "\n")
