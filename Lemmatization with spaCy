@@ -1,0 +1,9 @@
+document = nlp(text)
+tokens = [token.text for token in document]
+
+# Append the lemma for all tokens in the document
+lemmas = [token.lemma_ for token in document]
+print("Lemmas:\n", lemmas, "\n")
+
+# Print tokens and compare with lemmas list
+print("Tokens:\n", tokens)
