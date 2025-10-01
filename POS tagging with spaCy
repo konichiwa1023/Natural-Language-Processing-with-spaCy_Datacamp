@@ -1,0 +1,7 @@
+# Compile a list of all Doc containers of texts
+documents = [nlp(text) for text in texts]
+# Print token texts and POS tags for each Doc container
+for doc in documents:
+    for token in doc:
+        print("Text: ", token.text, "| POS tag: ", token.pos_)
+    print("\n")
