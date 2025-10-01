@@ -1,0 +1,8 @@
+# Compile a list of all Doc containers of texts
+documents = [nlp(text) for text in texts]
+# Print the entity text and label for the entities in each document
+for doc in documents:
+    print([(ent.text, ent.label_) for ent in doc.ents])
+    
+# Print the 6th token's text and entity type of the second document
+print("\nText:", documents[1][5].text, "| Entity type: ", documents[1][5].ent_type_)
