@@ -1,0 +1,9 @@
+# Generating a documents list of all Doc containers
+documents = [nlp(text) for text in texts]
+# Iterate through documents and append sentences in each doc to the sentences list
+sentences = []
+for doc in documents:
+  sentences.append([s for s in doc.sents])
+  
+# Find number of sentences per each doc container
+print([len(s) for s in sentences])
