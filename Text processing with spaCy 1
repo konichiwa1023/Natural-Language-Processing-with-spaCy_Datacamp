@@ -1,0 +1,5 @@
+# Create a list to store sentences of each Doc container in documents
+sentences = [[sent for sent in doc.sents] for doc in documents]
+# Print number of sentences in each Doc container in documents
+num_sentences = [len(s) for s in sentences]
+print("Number of sentences in documents:\n", num_sentences)
