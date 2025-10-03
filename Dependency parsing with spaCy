@@ -1,0 +1,5 @@
+# Create a list of Doc containts of texts list
+documents = [nlp(t) for t in texts]
+# Print each token's text, dependency label and its explanation
+for doc in documents:
+    print([(token.text, token.dep_, spacy.explain(token.dep_)) for token in doc], "\n")
