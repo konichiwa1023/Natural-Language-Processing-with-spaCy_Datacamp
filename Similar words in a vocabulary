@@ -1,0 +1,5 @@
+# Find the most similar word to the word computer
+most_similar_words = nlp.vocab.vectors.most_similar(np.asarray([word_vector]), n = 1)
+# Find the list of similar words given the word IDs
+words = [nlp.vocab.strings[w] for w in most_similar_words[0][0]]
+print(words)
