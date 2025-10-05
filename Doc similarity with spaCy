@@ -1,0 +1,8 @@
+# Create a documents list containing Doc containers
+documents = [nlp(t) for t in texts]
+# Create a Doc container of the category
+category = "canned dog food"
+category_document = nlp(category)
+# Print similarity scores of each Doc container and the category_document
+for i, doc in enumerate(documents):
+   print(f"Semantic similarity with document {i+1}:", round(doc.similarity(category_document), 3))
