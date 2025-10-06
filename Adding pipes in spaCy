@@ -1,0 +1,11 @@
+# Load a blank spaCy English model and add a sentencizer component
+nlp = spacy.blank("en")
+nlp.add_pipe("sentencizer")
+
+# Create Doc containers, store sentences and print its number of sentences
+doc = nlp(texts)
+sentences = [s for s in doc.sents]
+print("Number of sentences: ", len(sentences), "\n")
+
+# Print the list of tokens in the second sentence
+print("Second sentence tokens: ", [token for token in sentences[1]])
