@@ -1,0 +1,14 @@
+# Append a tuple of (entities text, entities label) if Jumbo is in the entity
+target_entities = []
+for doc in documents:
+    target_entities.extend([(ent.text, ent.label_) for ent in doc.ents if "Jumbo" in ent.text])
+print(target_entities)
+
+# Append True to the correct_labels list if the entity label is `PRODUCT`
+correct_labels = []
+for ent in target_entities:
+    if ent[1] == "PRODUCT":
+        correct_labels.append(True)
+    else:
+        correct_labels.append(False)
+print(correct_labels)
