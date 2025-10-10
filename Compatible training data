@@ -1,0 +1,16 @@
+example_text = 'A patient with chest pain had hyperthyroidism.'
+training_data = [(example_text, {'entities': [(15, 25, 'SYMPTOM'), (30, 45, 'DISEASE')]})]
+
+all_examples = []
+# Iterate through text and annotations and convert text to a Doc container
+for text, annotations in training_data:
+  doc = nlp(text)
+  
+  # Create an Example object from the doc container and annotations
+  example_sentence = Example.from_dict(doc, annotations)
+  print(example_sentence.to_dict(), "\n")
+  
+  # Append the Example object to the list of all examples
+  all_examples.append(example_sentence)
+  
+print("Number of formatted training data: ", len(all_examples))
